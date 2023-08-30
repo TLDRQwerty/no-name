@@ -1,0 +1,20 @@
+---
+import Victorious from "../components/Victorious.svelte";
+import Login from "../components/Login.svelte";
+import data from "../data.html?raw";
+const { SPOTIFY_CLIENT_ID } = import.meta.env;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>No-name</title>
+  </head>
+  <body>
+    <Login SPOTIFY_CLIENT_ID={SPOTIFY_CLIENT_ID} client:only/>
+    <Victorious data={data} client:only />
+  </body>
+</html>
